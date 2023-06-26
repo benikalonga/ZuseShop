@@ -6,7 +6,7 @@ const {width} = Dimensions.get('window');
 
 const SplashScreen = ({navigation, route}) => {
   setTimeout(() => {
-    navigation.navigate('Home');
+    navigation.replace('Home');
   }, 3000);
 
   return (
