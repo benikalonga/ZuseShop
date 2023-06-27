@@ -12,8 +12,6 @@
 
 ### Here is a video showing how it works
 
-https://user-images.githubusercontent.com/29547138/180584549-a34bd1db-2f5b-4e03-bc96-4463ef1dbd9f.mp4
-
 # Features
 
 - HomeScreen
