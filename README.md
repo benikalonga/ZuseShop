@@ -1,6 +1,6 @@
 # ZuseShop
-## by Beni Kalonga - Technical Assignment
 
+## by Beni Kalonga - Technical Assignment
 
 #Get started with this
 
@@ -10,17 +10,21 @@
 - Run npm start to start the server
 - Run npx react-native run-android to run on a android device or npx react-native run-ios to run on a iOS device
 
-
 ### Here is a video showing how it works
+
 https://user-images.githubusercontent.com/29547138/180584549-a34bd1db-2f5b-4e03-bc96-4463ef1dbd9f.mp4
 
 # Features
+
 - HomeScreen
 - CreationScreen
 - ProfileScreen
 - LoginScreen
+- ProductDetailScreen
+- SplashScreen
 
 # Depencies and Libraries
+
 [In the Package.json file](package.json)
 
 @react-native-async-storage/async-storage": "^1.18.2
@@ -41,13 +45,14 @@ react-navigation-shared-element": "^3.1.3"
 # Architecture (MVC)
 
 ## Screenshots (Step by step)
+
  <p align="center">
-  <img src="files/1.png" width="150" title="Picture 1">
-  <img src="files/2.png" width="150" alt="accessibility text">
-  <img src="files/3.png" width="150" alt="accessibility text">
-  <img src="files/4.png" width="150" alt="accessibility text">
-  <img src="files/5.png" width="150" alt="accessibility text">
-  <img src="files/6.png" width="150" alt="accessibility text">
-  <img src="files/7.png" width="150" alt="accessibility text">
-  <img src="files/8.png" width="150" alt="accessibility text">
+  <img src="files/1_SplashScreen.png" width="150" title="Picture 1">
+  <img src="files/2_ErrorHandling.png" width="150" alt="accessibility text">
+  <img src="files/3_Home.png" width="150" alt="accessibility text">
+  <img src="files/4_LoginScreen.png" width="150" alt="accessibility text">
+  <img src="files/5_ProfileScreen.png" width="150" alt="accessibility text">
+  <img src="files/6_ProductDetail.png" width="150" alt="accessibility text">
+  <img src="files/7_CreationProductScreen.png" width="150" alt="accessibility text">
+  <img src="files/ZuseShop.png" width="150" alt="accessibility text">
  </p>
