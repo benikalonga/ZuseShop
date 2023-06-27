@@ -1,8 +1,5 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
-import {Dimensions} from 'react-native';
-
-const width = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,8 +8,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
+  image: width => ({
     width: width / 2.5,
     height: width / 2.5,
-  },
+  }),
 });

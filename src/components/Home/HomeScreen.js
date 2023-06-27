@@ -16,6 +16,7 @@ import useFetch from '../../hook/useFetch';
 import colors from '../../constants/colors';
 import {ErrorView} from '../error/ErrorView';
 import {Rating} from 'react-native-ratings';
+import {styles} from './styles';
 import * as RootNavigation from '../../RootNavigation';
 
 const {width} = Dimensions.get('window');
@@ -24,7 +25,9 @@ const ProductItem = ({product, navigation, handleClick}) => {
   const [color, setColor] = useState('#ddd');
 
   return (
-    <TouchableOpacity style={styles.item} onPress={() => handleClick(product)}>
+    <TouchableOpacity
+      style={styles.item(width)}
+      onPress={() => handleClick(product)}>
       <View style={styles.imageContainer} backgroundColor={color}>
         <Image style={styles.image} source={{uri: product.images[0]}} />
       </View>
@@ -115,68 +118,3 @@ const HomeScreen = ({navigation, route}) => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-  item: {
-    width: width / 2 - 24,
-    marginLeft: 16,
-    marginBottom: 16,
-    backgroundColor: colors.white,
-  },
-  imageContainer: {
-    height: 180,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.white,
-    borderRadius: 14,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 2,
-  },
-  image: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'cover',
-    borderRadius: 14,
-  },
-  textContainer: {
-    marginVertical: 4,
-  },
-  text: {
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
-  ratingContainer: {
-    flexDirection: 'row',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    gap: 5,
-  },
-  addButton: {
-    width: 56,
-    height: 56,
-    borderRadius: 100,
-    backgroundColor: colors.primary,
-    position: 'absolute',
-    zIndex: 999,
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowOpacity: 0.3,
-    bottom: 16,
-    right: 16,
-  },
-  addText: {
-    fontSize: 32,
-    color: colors.white,
-  },
-});

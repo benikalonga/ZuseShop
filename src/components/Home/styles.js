@@ -1,20 +1,17 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
-import {Dimensions} from 'react-native';
-
-const {width} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
   },
-  item: {
+  item: width => ({
     width: width / 2 - 24,
     marginLeft: 16,
     marginBottom: 16,
     backgroundColor: colors.white,
-  },
+  }),
   imageContainer: {
     height: 180,
     justifyContent: 'center',
