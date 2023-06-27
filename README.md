@@ -14,7 +14,6 @@
 
 https://github.com/benikalonga/ZuseShop/assets/29547138/5a0660af-903c-44af-8a36-05ccd53ba0fa
 
- 
 # Features
 
 - HomeScreen
@@ -43,7 +42,7 @@ https://github.com/benikalonga/ZuseShop/assets/29547138/5a0660af-903c-44af-8a36-
 - react-native-shared-element": "^0.8.8",
 - react-navigation-shared-element": "^3.1.3"
 
-# Architecture (MVC)
+# Architecture (VVM of MVVM)
 
 ## Screenshots (Step by step)
 
