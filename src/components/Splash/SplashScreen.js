@@ -5,6 +5,10 @@ import {styles} from './styles';
 
 const {width} = Dimensions.get('window');
 
+/**
+ * The SplashScreen component
+ */
+
 const SplashScreen = ({navigation, route}) => {
   setTimeout(() => {
     navigation.replace('Home');

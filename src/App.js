@@ -16,12 +16,21 @@ import * as RootNavigation from './RootNavigation';
 
 const Stack = createNativeStackNavigator();
 
+/* Main Component
+ * Container is a NavigationContainer
+ * We have the HomeScreen, ProductDetailScreen, LoginScreen, DetailScreen, ProfileScreen and AddProductScreen
+ * with the SplashScreen as the initial visible Screen
+ */
 const App = () => {
+  // I use a custom hook to get and save the user localy
   const [user, setUser] = useStorage({isLoggedIn: false}, 'user');
 
+  // I used a RootNavigation to hold the navigation and the user object all over the code
   RootNavigation.user.user = user;
   RootNavigation.user.setUser = setUser;
 
+  // OnClick the login button,
+  // if the user is logged in it opens the ProfileScreen and the LoginScreen Otherwise
   const handlePressLogin = _ => {
     user.isLoggedIn
       ? RootNavigation.navigate('ProfileScreen')

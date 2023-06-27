@@ -2,7 +2,11 @@ import React from 'react';
 import {Image, Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 import images from '../../constants/images';
 import colors from '../../constants/colors';
+import {styles} from './styles';
 
+/**
+ * The error component used to display an error
+ */
 export const ErrorView = ({onRefresh}) => {
   return (
     <View style={styles.errorContainer}>
@@ -16,32 +20,3 @@ export const ErrorView = ({onRefresh}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  errorContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 8,
-    marginBottom: 8,
-    height: '100%',
-    gap: 10,
-  },
-
-  errorImg: {
-    height: 40,
-    resizeMode: 'contain',
-  },
-  errorBtnTextContainer: {
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: colors.error,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 2,
-  },
-  btnText: {
-    color: colors.error,
-    fontWeight: '400',
-  },
-});

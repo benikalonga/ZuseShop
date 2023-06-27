@@ -21,59 +21,10 @@ import * as RootNavigation from '../../RootNavigation';
 
 const {width} = Dimensions.get('window');
 
-const ProductItem = ({product, navigation, handleClick}) => {
-  const [color, setColor] = useState('#ddd');
-
-  return (
-    <TouchableOpacity
-      style={styles.item(width)}
-      onPress={() => handleClick(product)}>
-      <View style={styles.imageContainer} backgroundColor={color}>
-        <Image style={styles.image} source={{uri: product.images[0]}} />
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>{product.title}</Text>
-        <View style={styles.ratingContainer}>
-          <Text style={styles.text}>R{product.price}</Text>
-          <Rating
-            ratingCount={5}
-            imageSize={14}
-            startingValue={product.rating}
-            readonly
-          />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const ProductList = ({
-  data,
-  navigation,
-  refreshing,
-  onRefresh,
-  handleClick,
-}) => {
-  return (
-    <FlatList
-      data={data}
-      numColumns={2}
-      renderItem={({item}) => (
-        <ProductItem
-          product={item}
-          navigation={navigation}
-          handleClick={handleClick}
-        />
-      )}
-      style={{paddingVertical: 10}}
-      keyExtractor={(item, i) => item.id + i.toString()}
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
-    />
-  );
-};
-
+/**
+ * The Main screen,
+ * Showing a list of all the product from the API
+ */
 const HomeScreen = ({navigation, route}) => {
   const {data, setData, isLoading, error, reFetch} = useFetch(
     '?select=id,title,price,images,rating',
@@ -117,4 +68,61 @@ const HomeScreen = ({navigation, route}) => {
   );
 };
 
+/**
+ * The product item component
+ */
+const ProductItem = ({product, navigation, handleClick}) => {
+  const [color, setColor] = useState('#ddd');
+
+  return (
+    <TouchableOpacity
+      style={styles.item(width)}
+      onPress={() => handleClick(product)}>
+      <View style={styles.imageContainer} backgroundColor={color}>
+        <Image style={styles.image} source={{uri: product.images[0]}} />
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{product.title}</Text>
+        <View style={styles.ratingContainer}>
+          <Text style={styles.text}>R{product.price}</Text>
+          <Rating
+            ratingCount={5}
+            imageSize={14}
+            startingValue={product.rating}
+            readonly
+          />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
+/**
+ * The product list component
+ */
+const ProductList = ({
+  data,
+  navigation,
+  refreshing,
+  onRefresh,
+  handleClick,
+}) => {
+  return (
+    <FlatList
+      data={data}
+      numColumns={2}
+      renderItem={({item}) => (
+        <ProductItem
+          product={item}
+          navigation={navigation}
+          handleClick={handleClick}
+        />
+      )}
+      style={{paddingVertical: 10}}
+      keyExtractor={(item, i) => item.id + i.toString()}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+    />
+  );
+};
 export default HomeScreen;

@@ -17,13 +17,17 @@ const {
 } = require('react-native');
 import {styles} from './styles';
 
+/**
+ * LoginScreen, post the email and password to the API and listen to the response event
+ * if success, update the user object and store it in the local storage
+ */
 const LoginScreen = ({navigation, route}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  const {data, isLoading, setIsLoading, error, rePost} = usePost();
+  const {data, isLoading, setIsLoading, error, rePost: logUser} = usePost();
 
   const passwordInputRef = createRef();
 
@@ -37,7 +41,7 @@ const LoginScreen = ({navigation, route}) => {
       return;
     } else setPasswordError('');
 
-    rePost(userEmail, userPassword, dataUser => {
+    logUser(userEmail, userPassword, dataUser => {
       if (dataUser) {
         RootNavigation.user.setUser({
           profile: images.profile,

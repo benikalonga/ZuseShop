@@ -17,6 +17,11 @@ const {
 import * as RootNavigation from '../../RootNavigation';
 import {styles} from './styles';
 
+/**
+ * The AddProductScreen (CreationProductScreen)
+ * After populating all the field,
+ * the user will be asked to either Add More, or to go back to the HomeScreen
+ */
 const AddProductScreen = ({navigation, route}) => {
   const [pTitle, setPTitle] = useState('');
   const [pBrand, setPBrand] = useState('');
@@ -29,6 +34,10 @@ const AddProductScreen = ({navigation, route}) => {
 
   const {data, isLoading, setIsLoading, error, rePost: addProduct} = usePost();
 
+  // First check if all the field are filled up, show an error if not
+  // Create a product object (some fields are simulated)
+  // Add the product by using a Post Method to the API, and listen to respon
+  //if success, the product is automatically added to the list and shown on the HomeScreen
   const handleAddProduct = () => {
     if (!pTitle) {
       setPError('Enter a valid product name');

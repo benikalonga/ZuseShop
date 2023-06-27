@@ -11,9 +11,21 @@ const {
   TouchableOpacity,
 } = require('react-native');
 
+/** The Profile Screen component
+ *
+ * First get the user object,
+ * Populate the component
+ * Handle the logout feature
+ */
+
 const ProfileScreen = ({navigation, route}) => {
   const user = RootNavigation.user.user;
 
+  /**
+   * If the user clics log out, an alert dialog pops up asking to confirm
+   * if confirmed, the user.isLoggedIn will be set to false
+   * and will be redirected to the HomeScreen
+   */
   const handleLogOut = () => {
     Alert.alert('Log out', 'You are about to log out ', [
       {

@@ -42,6 +42,14 @@ https://github.com/benikalonga/ZuseShop/assets/29547138/5a0660af-903c-44af-8a36-
 - react-native-shared-element": "^0.8.8",
 - react-navigation-shared-element": "^3.1.3"
 
+# API (Free)
+
+## [DummyJSON](https://dummyjson.com/docs/products) is the free API I used for the entire project
+
+- Get all products, [https://dummyjson.com/products](https://dummyjson.com/products) GET Methon
+- Get one product, [https://dummyjson.com/products/id](https://dummyjson.com/products/id) GET Method
+- Add a product, [https://dummyjson.com/products/add](https://dummyjson.com/products/add) using POST Method
+
 # Architecture (VVM of MVVM)
 
 ## Screenshots (Step by step)
